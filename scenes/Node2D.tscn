@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://m4f2f4qbthvt"]
+
+[ext_resource type="Texture2D" uid="uid://bpkckomf11buv" path="res://assets/01Bg.png" id="1_7mm6y"]
+[ext_resource type="PackedScene" uid="uid://cjxa1tjs83bmf" path="res://scenes/Player01.tscn" id="2_nni7k"]
+[ext_resource type="PackedScene" uid="uid://bcw7tweltyshq" path="res://scenes/Player02.tscn" id="3_2s470"]
+[ext_resource type="PackedScene" uid="uid://cnkqv3idldcfq" path="res://scenes/Wall01.tscn" id="4_virxf"]
+[ext_resource type="PackedScene" uid="uid://b8ugygssny7am" path="res://scenes/Wall02.tscn" id="5_ao40x"]
+[ext_resource type="PackedScene" uid="uid://hp68qwkew24a" path="res://scenes/Ball.tscn" id="6_ulf1u"]
+
+[node name="Node2D" type="Node2D"]
+texture_filter = 1
+scale = Vector2(1.00009, 1.00018)
+
+[node name="01Bg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(639.942, 359.935)
+texture = ExtResource("1_7mm6y")
+
+[node name="Player01" parent="." groups=["Player"] instance=ExtResource("2_nni7k")]
+position = Vector2(52, 296)
+scale = Vector2(1, 1)
+
+[node name="Player02" parent="." groups=["Player"] instance=ExtResource("3_2s470")]
+position = Vector2(1204, 296)
+
+[node name="Walll01" parent="." groups=["Walls"] instance=ExtResource("4_virxf")]
+position = Vector2(0, 3.99928)
+
+[node name="Wall02" parent="." groups=["Walls"] instance=ExtResource("5_ao40x")]
+position = Vector2(0, 719.87)
+
+[node name="Ball" parent="." instance=ExtResource("6_ulf1u")]
+position = Vector2(626.944, 349.937)
+scale = Vector2(1.01604, 0.956368)
