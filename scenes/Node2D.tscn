@@ -9,6 +9,7 @@
 
 [node name="Node2D" type="Node2D"]
 texture_filter = 1
+position = Vector2(6, 2)
 scale = Vector2(1.00009, 1.00018)
 
 [node name="01Bg" type="Sprite2D" parent="."]
@@ -17,7 +18,7 @@ position = Vector2(639.942, 359.935)
 texture = ExtResource("1_7mm6y")
 
 [node name="Player01" parent="." groups=["Player"] instance=ExtResource("2_nni7k")]
-position = Vector2(52, 296)
+position = Vector2(51.9953, 295.947)
 scale = Vector2(1, 1)
 
 [node name="Player02" parent="." groups=["Player"] instance=ExtResource("3_2s470")]
