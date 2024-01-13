@@ -3,9 +3,9 @@ using System;
 
 public partial class Ball : CharacterBody2D
 {
-	//[Export]
-	int Speed = 350;
-  
+    //[Export]
+    int Speed = 400;
+
 
     Vector2 direction;
 
@@ -23,18 +23,13 @@ public partial class Ball : CharacterBody2D
         var collision = MoveAndCollide(direction * (float)delta);
         var touchingWalls = ((Node)collision.GetCollider()).IsInGroup("Walls");
         var touchingPlayer = ((Node)collision.GetCollider()).IsInGroup("Player");
-
         if (touchingWalls)
         {
             direction.Y = direction.Y * (-1);
-     
         }
-
         else if (touchingPlayer)
         {
             direction.X = direction.X * (-1);
         }
-
-
     }
 }
