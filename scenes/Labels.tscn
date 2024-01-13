@@ -12,9 +12,9 @@ scale = Vector2(1.00207, 1.00552)
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_top = 20.0
+offset_top = 36.0
 offset_right = 1280.0
-offset_bottom = 70.0
+offset_bottom = 100.0
 theme_override_constants/separation = 200
 alignment = 1
 

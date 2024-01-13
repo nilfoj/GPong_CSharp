@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://m4f2f4qbthvt"]
+[gd_scene load_steps=9 format=3 uid="uid://m4f2f4qbthvt"]
 
 [ext_resource type="Texture2D" uid="uid://bpkckomf11buv" path="res://assets/01Bg.png" id="1_7mm6y"]
 [ext_resource type="PackedScene" uid="uid://cjxa1tjs83bmf" path="res://scenes/Player01.tscn" id="2_nni7k"]
@@ -7,14 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://b8ugygssny7am" path="res://scenes/Wall02.tscn" id="5_ao40x"]
 [ext_resource type="PackedScene" uid="uid://hp68qwkew24a" path="res://scenes/Ball.tscn" id="6_ulf1u"]
 [ext_resource type="PackedScene" uid="uid://tdpbgn1e0po8" path="res://scenes/Labels.tscn" id="7_sew3i"]
+[ext_resource type="Texture2D" uid="uid://cra1d41s4qh1p" path="res://assets/00_Bg.png" id="8_xoyi8"]
 
-[node name="Node2D" type="Node2D"]
+[node name="GPong" type="Node2D"]
 texture_filter = 1
-scale = Vector2(1.00337, 0.986682)
 
 [node name="01Bg" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(639.942, 359.935)
+position = Vector2(640, 360)
+scale = Vector2(1.00007, 0.99975)
 texture = ExtResource("1_7mm6y")
 
 [node name="Player01" parent="." groups=["Player"] instance=ExtResource("2_nni7k")]
@@ -35,3 +36,20 @@ position = Vector2(626.944, 349.937)
 scale = Vector2(1.01604, 0.956368)
 
 [node name="UI" parent="." instance=ExtResource("7_sew3i")]
+offset_right = 0.0
+offset_bottom = 0.0
+scale = Vector2(0.945002, 0.986779)
+
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 556.0
+offset_top = 340.0
+offset_right = 787.0
+offset_bottom = 384.0
+scale = Vector2(1.04106, 1)
+theme_type_variation = &"FlatButton"
+
+[node name="00Bg" type="Sprite2D" parent="UI/Button"]
+position = Vector2(115.504, 23.8233)
+scale = Vector2(1.01646, 1.0134)
+texture = ExtResource("8_xoyi8")
