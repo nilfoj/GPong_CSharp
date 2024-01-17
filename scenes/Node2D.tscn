@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://m4f2f4qbthvt"]
+[gd_scene load_steps=10 format=3 uid="uid://m4f2f4qbthvt"]
 
 [ext_resource type="Texture2D" uid="uid://bpkckomf11buv" path="res://assets/01Bg.png" id="1_7mm6y"]
+[ext_resource type="Script" path="res://scripts/GPong.cs" id="1_ffqqc"]
 [ext_resource type="PackedScene" uid="uid://cjxa1tjs83bmf" path="res://scenes/Player01.tscn" id="2_nni7k"]
 [ext_resource type="PackedScene" uid="uid://bcw7tweltyshq" path="res://scenes/Player02.tscn" id="3_2s470"]
 [ext_resource type="PackedScene" uid="uid://cnkqv3idldcfq" path="res://scenes/Wall01.tscn" id="4_virxf"]
@@ -11,6 +12,7 @@
 
 [node name="GPong" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_ffqqc")
 
 [node name="01Bg" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -35,21 +37,28 @@ position = Vector2(0, 719.87)
 position = Vector2(626.944, 349.937)
 scale = Vector2(1.01604, 0.956368)
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Ball"]
+position = Vector2(-625.904, 9.99927)
+scale = Vector2(0.885789, 37.6947)
+
 [node name="UI" parent="." instance=ExtResource("7_sew3i")]
 offset_right = 0.0
 offset_bottom = 0.0
 scale = Vector2(0.945002, 0.986779)
 
+[node name="00Bg" type="Sprite2D" parent="UI"]
+position = Vector2(677.304, 363.823)
+scale = Vector2(1.0582, 1.0134)
+texture = ExtResource("8_xoyi8")
+
 [node name="Button" type="Button" parent="UI"]
 layout_mode = 0
-offset_left = 556.0
-offset_top = 340.0
-offset_right = 787.0
-offset_bottom = 384.0
+offset_left = 560.0
+offset_top = 343.0
+offset_right = 784.0
+offset_bottom = 381.0
 scale = Vector2(1.04106, 1)
 theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 
-[node name="00Bg" type="Sprite2D" parent="UI/Button"]
-position = Vector2(115.504, 23.8233)
-scale = Vector2(1.01646, 1.0134)
-texture = ExtResource("8_xoyi8")
+[connection signal="pressed" from="UI/Button" to="." method="OnButtonPressed"]

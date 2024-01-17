@@ -14,7 +14,7 @@ public partial class Ball : CharacterBody2D
     {
         //direction = new Vector2 (-1 * Speed, 1 * Speed);
         //direction = new Vector2 (-Mathf.Abs(Speed), Mathf.Abs(Speed));
-        direction = new Vector2(GD.RandRange(-3, 3) * Speed, GD.RandRange(-3, 3) * Speed);
+        direction = new Vector2(0, 0);
     }
 
 
@@ -32,4 +32,12 @@ public partial class Ball : CharacterBody2D
             direction.X = direction.X * (-1);
         }
     }
+
+
+    public void Start()
+    {
+        direction = new Vector2(GD.RandRange(-3, 3) * Speed, GD.RandRange(-3, 3) * Speed);
+    }
+
+
 }
