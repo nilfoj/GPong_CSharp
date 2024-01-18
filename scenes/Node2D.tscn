@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cnkqv3idldcfq" path="res://scenes/Wall01.tscn" id="4_virxf"]
 [ext_resource type="PackedScene" uid="uid://b8ugygssny7am" path="res://scenes/Wall02.tscn" id="5_ao40x"]
 [ext_resource type="PackedScene" uid="uid://hp68qwkew24a" path="res://scenes/Ball.tscn" id="6_ulf1u"]
-[ext_resource type="PackedScene" uid="uid://tdpbgn1e0po8" path="res://scenes/Labels.tscn" id="7_sew3i"]
+[ext_resource type="FontFile" uid="uid://c5icyrt8ahbny" path="res://font/04B_30__.TTF" id="8_bra7l"]
 [ext_resource type="Texture2D" uid="uid://cra1d41s4qh1p" path="res://assets/00_Bg.png" id="8_xoyi8"]
 
 [node name="GPong" type="Node2D"]
@@ -41,24 +41,46 @@ scale = Vector2(1.01604, 0.956368)
 position = Vector2(-625.904, 9.99927)
 scale = Vector2(0.885789, 37.6947)
 
-[node name="UI" parent="." instance=ExtResource("7_sew3i")]
-offset_right = 0.0
-offset_bottom = 0.0
-scale = Vector2(0.945002, 0.986779)
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 309.0
+offset_bottom = 99.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+texture_filter = 1
+offset_top = 36.0
+offset_right = 298.0
+offset_bottom = 90.0
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_bra7l")
+theme_override_font_sizes/font_size = 52
+text = "0"
+
+[node name="Label2" type="Label" parent="UI/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_bra7l")
+theme_override_font_sizes/font_size = 52
+text = "0"
 
 [node name="00Bg" type="Sprite2D" parent="UI"]
+visible = false
 position = Vector2(677.304, 363.823)
 scale = Vector2(1.0582, 1.0134)
 texture = ExtResource("8_xoyi8")
 
 [node name="Button" type="Button" parent="UI"]
-layout_mode = 0
-offset_left = 560.0
-offset_top = 343.0
-offset_right = 784.0
-offset_bottom = 381.0
+offset_left = 559.787
+offset_top = 342.529
+offset_right = 783.787
+offset_bottom = 380.529
 scale = Vector2(1.04106, 1)
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 
+[connection signal="screen_exited" from="Ball/VisibleOnScreenNotifier2D" to="." method="OnVisibleOnScreenNotifier2dScreenExited"]
 [connection signal="pressed" from="UI/Button" to="." method="OnButtonPressed"]
