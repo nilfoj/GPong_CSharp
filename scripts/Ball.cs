@@ -4,7 +4,7 @@ using System;
 public partial class Ball : CharacterBody2D
 {
     //[Export]
-    int Speed = 400;
+    int Speed = 200;
 
 
     Vector2 direction;
@@ -21,22 +21,44 @@ public partial class Ball : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         var collision = MoveAndCollide(direction * (float)delta);
-        var touchingWalls = ((Node)collision.GetCollider()).IsInGroup("Walls");
-        var touchingPlayer = ((Node)collision.GetCollider()).IsInGroup("Player");
-        if (touchingWalls)
+        if (collision != null)
         {
-            direction.Y = direction.Y * (-1);
+            var touchingWalls = ((Node)collision.GetCollider()).IsInGroup("Walls");
+            var touchingPlayer = ((Node)collision.GetCollider()).IsInGroup("Player");
+
+
+            if (touchingWalls)
+            {
+                direction.Y = direction.Y * (-1);
+            }
+
+            else if (touchingPlayer)
+            {
+
+                if (collision.GetNormal().Y == 1 || collision.GetNormal().Y == -1)
+                {
+                    direction.Y = direction.Y * (-1 * 1.20f);
+                }
+
+                else
+                {
+                    direction.X = direction.X * (-1 * 1.20f);
+                }
+
+            }
         }
-        else if (touchingPlayer)
-        {
-            direction.X = direction.X * (-1);
-        }
+
     }
 
 
     public void Start()
     {
-        direction = new Vector2(GD.RandRange(-3, 3) * Speed, GD.RandRange(-3, 3) * Speed);
+        direction = new Vector2(GD.RandRange(-1, 1) * Speed, GD.RandRange(-1, 1) * Speed);
+        if((int)direction.Y == 0 || (int)direction.X == 0)
+        {
+            direction.Y = 1 * Speed;
+            direction.X = 1 * Speed;
+        }
     }
 
 
