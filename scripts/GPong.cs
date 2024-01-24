@@ -31,9 +31,10 @@ public partial class GPong : Node2D
             GetNode<Label>("UI/HBoxContainer/Label").Text = ScorePlayer01.ToString();
         }
 
-        //GetNode<CharacterBody2D>("Ball").Call("Start");
-        GetNode<Button>("UI/Button").Visible = true;
-        GetNode<Sprite2D>("UI/00Bg").Visible = true;
+        GetNode<CharacterBody2D>("Ball").GlobalPosition = new Vector2(GetViewportRect().Size.X/2, GetViewportRect().Size.Y/2);
+
+        //GetNode<Button>("UI/Button").Visible = true;
+        //GetNode<Sprite2D>("UI/00Bg").Visible = true;
 
 
     }

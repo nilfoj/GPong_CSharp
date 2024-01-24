@@ -16,8 +16,7 @@ script = ExtResource("1_ffqqc")
 
 [node name="01Bg" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(640, 360)
-scale = Vector2(1.00007, 0.99975)
+position = Vector2(640.739, 359.545)
 texture = ExtResource("1_7mm6y")
 
 [node name="Player01" parent="." groups=["Player"] instance=ExtResource("2_nni7k")]
@@ -70,17 +69,15 @@ theme_override_font_sizes/font_size = 52
 text = "0"
 
 [node name="00Bg" type="Sprite2D" parent="UI"]
-position = Vector2(677.304, 363.823)
-scale = Vector2(1.0582, 1.0134)
+position = Vector2(640.739, 359.545)
 texture = ExtResource("8_xoyi8")
 
 [node name="Button" type="Button" parent="UI"]
 layout_mode = 0
-offset_left = 558.0
-offset_top = 342.0
-offset_right = 782.0
-offset_bottom = 380.0
-scale = Vector2(1.04106, 1)
+offset_left = 529.0
+offset_top = 338.0
+offset_right = 754.0
+offset_bottom = 377.0
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 

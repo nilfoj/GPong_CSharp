@@ -3,8 +3,8 @@ using System;
 
 public partial class Ball : CharacterBody2D
 {
-    //[Export]
-    int Speed = 200;
+    [Export]
+    int Speed = 540;
 
 
     Vector2 direction;
@@ -37,12 +37,12 @@ public partial class Ball : CharacterBody2D
 
                 if (collision.GetNormal().Y == 1 || collision.GetNormal().Y == -1)
                 {
-                    direction.Y = direction.Y * (-1 * 1.20f);
+                    direction.Y = direction.Y * (-1 * 1f);
                 }
 
                 else
                 {
-                    direction.X = direction.X * (-1 * 1.20f);
+                    direction.X = direction.X * (-1 * 1f);
                 }
 
             }
