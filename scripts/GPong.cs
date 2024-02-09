@@ -21,7 +21,7 @@ public partial class GPong : Node2D
     {
         if(GetNode<CharacterBody2D>("Ball").GlobalPosition.X <= 0)
         {
-            ScorePlayer02 =+ 1;
+            ScorePlayer02 += 1;
             GetNode<Label>("UI/HBoxContainer/Label2").Text = ScorePlayer02.ToString();
         }
 
